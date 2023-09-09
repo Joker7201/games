@@ -1,0 +1,34 @@
+* {
+    background-color: black;
+}
+
+
+.logo {
+    height: 140px;
+    width: 140px;
+    top: 0;
+    border-width: 0 0 1px;
+    z-index: 2;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+
+.h1 {
+    color: blueviolet;
+}
+
+.box{
+    background-color: #164E66;
+    top: 0;
+    border-width: 0px;
+    height: 100px;
+    margin-bottom: 140px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.header {
+    margin-bottom: 200px;
+
+}
