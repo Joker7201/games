@@ -1,5 +1,5 @@
 <?php
-
+namespace controller;
 
 use core\mvc\ControllerBase;
 

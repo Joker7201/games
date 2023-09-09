@@ -1,39 +1,37 @@
 <?php
- //autoloader for my own classes
+//autoloader for my own classes
 
 spl_autoload_register(static function ($class) {
-    //includes classes from the directory 'controller'
-    /*$file = 'controller/'.$class.'.php';
-     if (file_exists($file)) {
-         require 'controller/'.$class.'.php';
-     }*/
 
-    if (strpos($class, 'core\\') !== 0) {
-        return;
+
+    $file = str_replace('\\', '/', $class) . '.php';
+    $fileName = 'core' . '/' . $file;
+
+    if (file_exists($fileName)) {
+        include $fileName;
     }
-    $fileName = str_replace('\\',DIRECTORY_SEPARATOR,$class).'.php';
-    if (file_exists(ROOT.'/'.$fileName)) {
-        include ROOT.'/'.$fileName;
-    }
+
 });
 
 spl_autoload_register(static function ($class) {
-    if (strpos($class, 'controller\\')!== 0) {
-        return;
+
+    $file = str_replace('\\', '/', $class) . '.php';
+    $fileName = str_replace('\\', '/', $class) . '.php';
+
+    if (file_exists($fileName)) {
+        include $fileName;
     }
-    $fileName = str_replace('\\',DIRECTORY_SEPARATOR,$class).'.php';
-    if (file_exists(ROOT.'/'.$fileName)) {
-        include ROOT.'/'.$fileName;
-    }
+
 });
 
 spl_autoload_register(static function ($class) {
-    $fileName = str_replace('\\',DIRECTORY_SEPARATOR,$class).'.php';
-    if (file_exists(ROOT.'/'.$fileName)) {
-        include ROOT.'/'.$fileName;
+
+    $file = str_replace('\\', '/', $class) . '.php';
+    $fileName = str_replace('\\', '/', $class) . '.php';
+
+    if (file_exists($fileName)) {
+        include $fileName;
     }
-
-
 
 });
 
