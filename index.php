@@ -2,8 +2,10 @@
 
 
 include 'core/autoload.php';
+require_once 'core/Routing.php';
+require_once 'core/__init.php';
 
+$routing = new core\Routing();
 
-$render = new controller\MainController();
+$routing->handle();
 
-$render->indexAction();
