@@ -4,6 +4,6 @@
 include 'core/autoload.php';
 
 
-$render = new MainController();
+$render = new controller\MainController();
 
 $render->indexAction();
