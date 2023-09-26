@@ -1,42 +1,27 @@
 <?php
-//autoloader for my own classes
-
-spl_autoload_register(static function ($class) {
-    if (strpos($class, 'core\\') !== 0) {
+spl_autoload_register(static function ($className) {
+    if (strpos($className, 'core\\') !== 0) {
         return;
     }
-
-    $file = str_replace('\\', '/', $class) . '.php';
-
-    if (file_exists($file)) {
-        include $file;
+    $fileName = str_replace('\\',DIRECTORY_SEPARATOR,$className).'.php';
+    if (file_exists(ROOT.'/'.$fileName)) {
+        include ROOT.'/'.$fileName;
     }
-
 });
 
-spl_autoload_register(static function ($class) {
-
-    if (strpos($class, 'controller\\')!== 0) {
+spl_autoload_register(static function ($className) {
+    if (strpos($className, 'controller\\')!== 0) {
         return;
     }
-
-    $file = str_replace('\\', '/', $class) . '.php';
-
-
-    if (file_exists($file)) {
-        include $file;
+    $fileName = str_replace('\\',DIRECTORY_SEPARATOR,$className).'.php';
+    if (file_exists(ROOT.'/'.$fileName)) {
+        include ROOT.'/'.$fileName;
     }
-
 });
 
-/*spl_autoload_register(static function ($class) {
-
-    $file = str_replace('\\', '/', $class) . '.php';
-    $fileName = str_replace('\\', '/', $class) . '.php';
-
-    if (file_exists($fileName)) {
-        include $fileName;
+spl_autoload_register(static function ($className) {
+    $fileName = str_replace('\\',DIRECTORY_SEPARATOR,$className).'.php';
+    if (file_exists(ROOT.'/'.$fileName)) {
+        include ROOT.'/'.$fileName;
     }
-
-});*/
-
+});

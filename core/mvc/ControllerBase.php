@@ -2,6 +2,7 @@
 
 namespace core\mvc;
 
+require_once 'vendor/autoload.php';
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -26,7 +27,7 @@ class ControllerBase implements ControllerInterface {
      * @return void
      */
     public function setView(string $controller): void {
-        $this->loader = new FilesystemLoader(array(VIEW . '/' . $controller, THEME . '/layout'));
+        $this->loader = new FilesystemLoader(array(VIEW . '/' . $controller));
         $this->view = new Environment($this->loader, [
             'cache'=>false
         ]);
