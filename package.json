@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "tailwindcss build -i style/src/style.css -o style/public/style.css",
+    "watch": "npx tailwindcss -i style/src/style.css -o style/public/style.css --watch"
   },
   "keywords": [],
   "author": "",

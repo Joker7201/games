@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+{% include 'main/header.twig' %}
+
+{% block head %}
+    <head>
+        <title>login</title>
+        <link rel="stylesheet" href="/style/public/style.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+{% endblock %}
+{% block body %}
+    <body class="text-purple-800 bg-sky-200">
+       <form action="" method="post">
+           <label for="name">Game: </label>
+           <input type="text" id="name" name="name">
+           <br><br>
+           <label for="description">Beschreibung: </label>
+           <input type="text" id="description" name="description">
+           <br><br>
+           <label for="pic_url">Bild: </label>
+           <input type="text" id="pic_url" name="pic_url">
+           <br><br>
+           <label for="date">Erscheinungsdatum: </label>
+           <input type="date" id="date" name="date">
+
+       </form>
+    </body>
+{% endblock %}
+</html>

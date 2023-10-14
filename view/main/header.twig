@@ -1,15 +1,10 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="/style/public/style.css" type="text/css">
+{% endblock %}
+
 {% block content %}
-    <head>
-        {% block stylesheets %}
-        <link rel="stylesheet" href="/style/style.css" type="text/css">
-        {% endblock %}
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-    <img src="/img/logo.png" alt="logo" class="logo">
-            <a href="/user/index">Login</a>
-
-
-    </body>
+    <div class="bg-cyan-700 h-32 flex justify-between">
+        <img src="/img/logo.png" alt="logo" class="w-36 h-32">
+        <a class="mr-1 text-violet-950"  href="/user/index">Login</a>
+    </div>
 {% endblock %}
