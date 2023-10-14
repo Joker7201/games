@@ -1,11 +1,10 @@
-<IfModule mod_rewrite.c >
+RewriteEngine On
 
-# rewrite engine settings:
- RewriteEngine On
- RewriteBase /
- Options -Indexes
+# Weiterleitung zur index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
 
- # rewrite rules;
- RewriteRule . index.php [NC,L]
-
-</IfModule>
+# Ignorieren von CSS-Dateien
+RewriteCond %{REQUEST_URI} \.css$
+RewriteRule ^ - [L]
